@@ -1,3 +1,5 @@
+
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -8,9 +10,16 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        'theme-gradient': "linear-gradient(101.24deg, #7161EF 0%, #A08AF9 100%);"
+      },
+      colors: {
+       
+        'theme-green': '#52FF36',
+        'theme-yellow': '#FBFF36',
+        'theme-blue': '#366EFF',
+         'theme-gray-dark': '#374151',
+         'theme-green-1': '#17A60A',
+       
       },
     },
   },
