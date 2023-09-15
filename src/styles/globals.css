@@ -19,25 +19,23 @@ body {
 }
 
 
-/* Track */
-
 ::-webkit-scrollbar-track {
-    background: #f1f1f1;
+  background: #f1f1f1;
 }
 
 
 /* Handle */
 
 .scrollbar-light::-webkit-scrollbar-thumb {
-    @apply bg-gray-400;
-    border-radius: 50px;
+  @apply bg-gray-400;
+  border-radius: 50px;
 }
 
 
 /* Handle on hover */
 
 ::-webkit-scrollbar-thumb:hover {
-    @apply bg-gray-500;
+  @apply bg-gray-500;
 }
 
 
@@ -45,23 +43,66 @@ body {
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+/* Firefox */
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* custom radio button styling */
+
+input[type="radio"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: inline-block;
+  border: 2px solid #000;
+  @apply border-2 outline border-white outline-gray-400 rounded-full w-5 h-5;
+}
+
+input[type="radio"]:checked {
+  @apply bg-theme-blue transition-all duration-300 outline-theme-blue;
+}
+
+/* checkbox */
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: inline-block;
+  @apply border-2 outline border-white outline-gray-400 rounded-md w-5 h-5;
+}
+
+input[type="checkbox"]:checked {
+  @apply bg-theme-blue relative transition-all duration-300 outline-theme-blue;
 }
 
 @keyframes blink {
-    0% {
-      opacity: 1;
-    }
-    50% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
+  0% {
+    opacity: 1;
   }
-  
-  .blinking {
-    animation: blink 1s infinite; /* Apply the animation to the element */
+
+  50% {
+    opacity: 0;
   }
-  
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.blinking {
+  animation: blink 1s infinite;
+  /* Apply the animation to the element */
+}
+
+@layer components {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
