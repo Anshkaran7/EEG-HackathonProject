@@ -17,11 +17,25 @@ function MemoryGame() {
   const [gameCompleted, setGameCompleted] = useState(false);
 
   useEffect(() => {
-    const shuffledAnimals = shuffle(animals);
-    const pairedAnimals = [...shuffledAnimals, ...shuffledAnimals];
-    setCards(pairedAnimals);
+    const preloadImages = () => {
+      const imagePromises = animals.map((animal) => {
+        const img = new Image();
+        img.src = animal.image;
+        return new Promise((resolve) => {
+          img.onload = resolve;
+        });
+      });
+  
+      return Promise.all(imagePromises);
+    };
+  
+    preloadImages().then(() => {
+      const shuffledAnimals = shuffle(animals);
+      const pairedAnimals = [...shuffledAnimals, ...shuffledAnimals];
+      setCards(pairedAnimals);
+    });
   }, []);
-
+  
   const shuffle = (array) => {
     const shuffledArray = [...array];
     for (let i = shuffledArray.length - 1; i > 0; i--) {
