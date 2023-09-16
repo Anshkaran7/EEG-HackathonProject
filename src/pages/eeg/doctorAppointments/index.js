@@ -24,7 +24,7 @@ const Doctor = () => {
       <div className="flex flex-col bg-white w-full rounded-lg shadow-md m-6">
         <div className="flex  m-6 justify-between">
           <p className="text-base  text-theme-gray-dark font-medium">Upcoming Appointments</p>
-          <button className="px-6 py-2 bg-theme-green h-10 rounded-lg duration-300 bg-opacity-25 hover:bg-theme-green hover:bg-opacity-50">Book Appointments</button>
+          {/* <button className="px-6 py-2 bg-theme-green h-10 rounded-lg duration-300 bg-opacity-25 hover:bg-theme-green hover:bg-opacity-50">Book Appointments</button> */}
         </div>
 
 

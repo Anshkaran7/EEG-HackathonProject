@@ -10,6 +10,10 @@ import Link from 'next/link'
 
 function AnalysisCard({ data }) {
 
+    const handleDownload = () => {
+        window.open("/assets/5706535416897055440.pdf", '_blank');
+    }
+
     return (
         <div className="cursor-pointer rounded-lg bg-theme-blue bg-opacity-20 border-2 shadow-md ">
             <div className='p-4 gap-x-48 flex flex-col md:flex-row justify-between relative'>
@@ -43,9 +47,9 @@ function AnalysisCard({ data }) {
                 </div>
 
 
-                <p className='absolute text-sm underline text-theme-blue  font-medium right-4 top-2'>
+                <button onClick={handleDownload} className='absolute text-sm underline text-theme-blue  font-medium right-4 top-2'>
                 View Prescription
-                </p>
+                </button>
             </div>
         </div>
     );
