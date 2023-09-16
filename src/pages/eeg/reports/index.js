@@ -1,7 +1,7 @@
 import { IconMessageCircle } from "@tabler/icons-react";
 import Navigation from "../../../Components/Navigation";
-import EEGGraph from "../../../Components/Chart";
-
+import EEGGraph from "@/Components/Chart";
+import { useState } from "react";
 const Reports = () => {
     
     const [eegData, setEEGData] = useState([
@@ -29,7 +29,7 @@ const Reports = () => {
                 <p className="text-base m-6  text-theme-gray-dark font-medium">Reports</p>
                 {/* <h1>Next.js EEG Graph Example</h1> */}
       {/* <button onClick={updateData}>Update EEG Data</button> */}
-      <EEGChart data={eegData} />
+      {/* <EEGGraph/> */}
 
                 <div className="flex justify-center items-center h-screen">
                     <EEGGraph />
