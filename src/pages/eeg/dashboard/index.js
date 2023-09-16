@@ -30,10 +30,12 @@ export default function Dahsboard() {
                 <div className="flex justify-center items-center">
                     <ToggleButton />
 
+
                 </div>
                 <div>
                     <MemoryGame></MemoryGame>
                 </div>
+
             </div>
             <button className="fixed flex bottom-8 right-8 p-2 border-2 border-red-400 rounded-full shadow-md">
                 <IconMessageCircle className="text-red-400" />
