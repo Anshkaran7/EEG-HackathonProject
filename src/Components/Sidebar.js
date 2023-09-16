@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import LinkItem from './sidebar/LinkItem'
 import { Analysis,  Doctor, Reports, SchoolSection } from './Icons'
 import Image from 'next/image'
+import { IconDashboard } from '@tabler/icons-react'
 
 
 function Sidebar({ activeTab }) {
@@ -21,6 +22,12 @@ function Sidebar({ activeTab }) {
 
                 {/* main links */}
                 <div className="px-4 py-4 space-y-4 ">
+
+                <LinkItem redirectUrl="/eeg/dashboard" activeTab={activeTab} currentTab="Dashboard">
+                        <IconDashboard className={`w-6 h-6 ${activeTab === "Dashboard" ? "text-theme-red" : "text-gray-600"}`} />
+                        <span className={activeTab === "Dashboard" ? "text-red-600" : "text-gray-600"}>Dashboard</span>
+                    </LinkItem>
+
                     <LinkItem redirectUrl="/eeg/reports" activeTab={activeTab} currentTab="Reports">
                         <Reports className={`w-6 h-6`} fillColor={activeTab === "Reports" ? "#FF3636" : "#6E6E6E"} />
                         <span className={activeTab === "Reports" ? "text-red-600" : "text-gray-600"}>Reports</span>
